@@ -1,14 +1,17 @@
 package gentjanahani.u2w5d2.config;
 
 import gentjanahani.u2w5d2.entities.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class ConfigClass {
 
     //PIZZE
@@ -118,6 +121,11 @@ public class ConfigClass {
 
         };
 
+    }
+
+    @Bean
+    public double getCostoCoperti(@Value("${coperto.costo}") double copertoCosto){
+        return copertoCosto;
     }
 
     //ORDINI

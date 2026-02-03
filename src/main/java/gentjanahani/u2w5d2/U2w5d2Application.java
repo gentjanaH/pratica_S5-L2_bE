@@ -5,8 +5,10 @@ import gentjanahani.u2w5d2.entities.Order;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan
 public class U2w5d2Application {
 
 	public static void main(String[] args) {
