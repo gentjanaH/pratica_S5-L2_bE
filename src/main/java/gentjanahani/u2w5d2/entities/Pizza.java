@@ -1,4 +1,4 @@
-package gentjanahani.u2w5d1.entities;
+package gentjanahani.u2w5d2.entities;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
-package gentjanahani.u2w5d1.config;
+package gentjanahani.u2w5d2.config;
 
-import gentjanahani.u2w5d1.entities.*;
+import gentjanahani.u2w5d2.entities.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -92,5 +92,12 @@ public class ConfigClass {
                 List.of(cheese(), ham(), onions(), pineapple(), salami()),
                 List.of(lemonade(),water(),wine())
         );
+    }
+
+    //TAVOLI
+    @Bean
+    public Table tavolo1(){
+        return new Table()
+
     }
 }

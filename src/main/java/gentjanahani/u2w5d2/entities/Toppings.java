@@ -1,6 +1,5 @@
-package gentjanahani.u2w5d1.entities;
+package gentjanahani.u2w5d2.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -9,16 +8,19 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class Drinks extends ElementiMenu{
+public class Toppings extends ElementiMenu  {
 
 
-    public Drinks(String name, int calories, double price) {
+    public Toppings(String name, int calories, double price) {
         super(name, calories, price);
     }
 
-    public  void printInfo(){
+    public void printInfo(){
         System.out.println(getName() + " - " +
                 getCalories() +" kcal - € " +
                 getPrice());
     };
-}
+};
+
+
+
