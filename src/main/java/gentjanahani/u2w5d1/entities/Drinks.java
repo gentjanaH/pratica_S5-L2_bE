@@ -1,0 +1,24 @@
+package gentjanahani.u2w5d1.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+
+public class Drinks extends ElementiMenu{
+
+
+    public Drinks(String name, int calories, double price) {
+        super(name, calories, price);
+    }
+
+    public  void printInfo(){
+        System.out.println(getName() + " - " +
+                getCalories() +" kcal - € " +
+                getPrice());
+    };
+}
