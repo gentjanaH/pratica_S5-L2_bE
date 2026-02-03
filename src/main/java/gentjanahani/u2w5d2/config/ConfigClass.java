@@ -4,6 +4,7 @@ import gentjanahani.u2w5d2.entities.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +98,16 @@ public class ConfigClass {
     //TAVOLI
     @Bean
     public Table tavolo1(){
-        return new Table()
+        return new Table(1, 4, StatoTavolo.LIBERO){
+
+        };
 
     }
+
+    //ORDINI
+//    @Bean
+//    public Order order1(){
+//        ArrayList<ElementiMenu> elementiMenus;
+//        return new Order(1, elementiMenus, StatoOrdine.IN_CORSO, 3, LocalTime.now(),  ){}
+//    }
 }
