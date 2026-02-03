@@ -9,7 +9,7 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @ToString
-public abstract class Table {
+public class Table {
     private int numTavolo;
     private int numeroCopertiMax;
     private StatoTavolo statoTavolo;

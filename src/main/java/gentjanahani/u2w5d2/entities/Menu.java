@@ -5,11 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
+@Component
 public class Menu {
     private List<ElementiMenu> pizzas;
     private List<Toppings> toppings;
@@ -27,4 +30,6 @@ public class Menu {
         System.out.println("---DRINKS----");
         drinks.forEach(d->d.printInfo());
     }
+
+
 }

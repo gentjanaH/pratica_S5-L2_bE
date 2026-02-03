@@ -85,15 +85,7 @@ public class ConfigClass {
         return new Drinks("Wine", 607, 7.49);
     }
 
-    //MENU
-    @Bean
-    public Menu menu(){
-        return new Menu(
-                List.of(margherita(), hawaiian(), salamiPizza()),
-                List.of(cheese(), ham(), onions(), pineapple(), salami()),
-                List.of(lemonade(),water(),wine())
-        );
-    }
+
 
     //TAVOLI
     @Bean
@@ -104,10 +96,41 @@ public class ConfigClass {
 
     }
 
+    @Bean
+    public Table tavolo2(){
+        return new Table(2, 10, StatoTavolo.LIBERO){
+
+        };
+
+    }
+
+    @Bean
+    public Table tavolo3(){
+        return new Table(3, 2, StatoTavolo.OCCUPATO){
+
+        };
+
+    }
+
+    @Bean
+    public Table tavolo4(){
+        return new Table(4, 4, StatoTavolo.LIBERO){
+
+        };
+
+    }
+
     //ORDINI
-//    @Bean
-//    public Order order1(){
-//        ArrayList<ElementiMenu> elementiMenus;
-//        return new Order(1, elementiMenus, StatoOrdine.IN_CORSO, 3, LocalTime.now(),  ){}
-//    }
+    @Bean
+    public Order order1(){
+        ArrayList<ElementiMenu> elementiMenus=new ArrayList<>();
+        elementiMenus.add(salamiPizza());
+        elementiMenus.add(margherita());
+        elementiMenus.add(hawaiian());
+        elementiMenus.add(water());
+        elementiMenus.add(wine());
+        elementiMenus.add(wine());
+
+        return new Order(1, 3, StatoOrdine.IN_CORSO, elementiMenus){};
+    }
 }
