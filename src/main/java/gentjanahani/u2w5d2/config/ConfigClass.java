@@ -91,7 +91,7 @@ public class ConfigClass {
 
 
     //TAVOLI
-    @Bean
+    @Bean(name="tavolo1")
     public Table tavolo1(){
         return new Table(1, 4, StatoTavolo.LIBERO){
 
@@ -128,17 +128,6 @@ public class ConfigClass {
         return copertoCosto;
     }
 
-    //ORDINI
-    @Bean
-    public Order order1(){
-        ArrayList<ElementiMenu> elementiMenus=new ArrayList<>();
-        elementiMenus.add(salamiPizza());
-        elementiMenus.add(margherita());
-        elementiMenus.add(hawaiian());
-        elementiMenus.add(water());
-        elementiMenus.add(wine());
-        elementiMenus.add(wine());
 
-        return new Order(1, 3, StatoOrdine.IN_CORSO, elementiMenus){};
-    }
+
 }

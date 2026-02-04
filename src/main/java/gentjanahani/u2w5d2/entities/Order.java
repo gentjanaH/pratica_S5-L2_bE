@@ -8,7 +8,9 @@ import lombok.ToString;
 
 import java.time.LocalTime;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Getter
 @Setter
@@ -19,25 +21,36 @@ public class Order {
     private StatoOrdine statoOrdine;
     private int numCoperti;
     private LocalTime oraDiArrivo=LocalTime.now();
-    private double totale=0;
+    private Table table;
 
-    public Order( int numOrdine, int numCoperti, StatoOrdine statoOrdine,List<ElementiMenu> elementiOrdinati) {
+
+    public Order( Table table,  int numCoperti) {
+        Random rndm = new Random();
+        if(table.getNumeroCopertiMax() <= numCoperti)
+            throw new RuntimeException("Numero coperti maggiore di quello consentito!");
+
+      this.table=table;
         this.numCoperti = numCoperti;
-        this.numOrdine = numOrdine;
-        this.elementiOrdinati = elementiOrdinati;
-        this.statoOrdine = statoOrdine;
+        this.numOrdine = rndm.nextInt(100,100000);
+        this.elementiOrdinati = new ArrayList<>();
+        this.statoOrdine = StatoOrdine.IN_CORSO;
 
     }
 
-    public void calcolaTotale(){
+    public void addItems(ElementiMenu item){
+        this.elementiOrdinati.add(item);
+    }
+
+    public double calcolaTotale(double costoCoperto){
         double tot=0;
 
         for (int i = 0; i < elementiOrdinati.size(); i++) {
           ElementiMenu  elemento=elementiOrdinati.get(i);
         tot += elemento.getPrice();
         }
+        tot+= numCoperti * costoCoperto;
+return tot;
 
-        this.totale=tot;
     }
 
     public void printOrder() {
@@ -51,7 +64,7 @@ public class Order {
                 elementiOrdinati.forEach(e->
                         System.out.println(e.getName() + " --- € " + e.getPrice()));
 
-        System.out.println("Totale:  € " + getTotale() );
+//        System.out.println("Totale:  € " + calcolaTotale(costoCoperto));
 
     }
 }

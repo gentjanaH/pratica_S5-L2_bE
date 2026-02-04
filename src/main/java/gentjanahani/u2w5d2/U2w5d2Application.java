@@ -15,15 +15,15 @@ public class U2w5d2Application {
 
 		SpringApplication.run(U2w5d2Application.class, args);
 
-		AnnotationConfigApplicationContext ctx= new AnnotationConfigApplicationContext(U2w5d2Application.class);
-		Menu menu=ctx.getBean(Menu.class);
-		menu.printMenu();
-
-		System.out.println("-------------ORDINE---------------");
-
-		Order order=ctx.getBean(Order.class);
-		order.calcolaTotale();
-		order.printOrder();
+//		AnnotationConfigApplicationContext ctx= new AnnotationConfigApplicationContext(U2w5d2Application.class);
+//		Menu menu=ctx.getBean(Menu.class);
+//		menu.printMenu();
+//
+//		System.out.println("-------------ORDINE---------------");
+//
+//		Order order=ctx.getBean(Order.class);
+//		order.calcolaTotale();
+//		order.printOrder();
 	}
 
 }
