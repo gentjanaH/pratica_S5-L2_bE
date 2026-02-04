@@ -30,9 +30,12 @@ public class MyRunner implements CommandLineRunner {
             order1.addItems(ctx.getBean("wine", Drinks.class));
             order1.addItems(ctx.getBean("wine", Drinks.class));
 
+
+            System.out.println("*******ORDINI*********");
             System.out.println("DETTAGLI TAVOLO 1");
             order1.printOrder();
-
+            System.out.println("Totale: € " + order1.calcolaTotale());
+            System.out.println("************GRAZIE E ARRIVEDERCI******");
 
         }catch (Exception ex) {
             System.err.println(ex.getMessage());

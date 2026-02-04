@@ -92,41 +92,41 @@ public class ConfigClass {
 
     //TAVOLI
     @Bean(name="tavolo1")
-    public Table tavolo1(){
-        return new Table(1, 4, StatoTavolo.LIBERO){
+    public Table tavolo1(@Value("${coperto.costo}") double copertoCosto){
+        return new Table(1, 4, StatoTavolo.LIBERO, copertoCosto){
 
         };
 
     }
 
     @Bean
-    public Table tavolo2(){
-        return new Table(2, 10, StatoTavolo.LIBERO){
+    public Table tavolo2(@Value("${coperto.costo}") double copertoCosto){
+        return new Table(2, 10, StatoTavolo.LIBERO, copertoCosto){
 
         };
 
     }
 
     @Bean
-    public Table tavolo3(){
-        return new Table(3, 2, StatoTavolo.OCCUPATO){
+    public Table tavolo3(@Value("${coperto.costo}") double copertoCosto){
+        return new Table(3, 2, StatoTavolo.OCCUPATO, copertoCosto){
 
         };
 
     }
 
     @Bean
-    public Table tavolo4(){
-        return new Table(4, 4, StatoTavolo.LIBERO){
+    public Table tavolo4(@Value("${coperto.costo}") double copertoCosto){
+        return new Table(4, 4, StatoTavolo.LIBERO, copertoCosto){
 
         };
 
     }
 
-    @Bean
-    public double getCostoCoperti(@Value("${coperto.costo}") double copertoCosto){
-        return copertoCosto;
-    }
+//    @Bean
+//    public double getCostoCoperti(@Value("${coperto.costo}") double copertoCosto){
+//        return copertoCosto;
+//    }
 
 
 

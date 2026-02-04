@@ -41,17 +41,22 @@ public class Order {
         this.elementiOrdinati.add(item);
     }
 
-    public double calcolaTotale(double costoCoperto){
+    public double calcolaTotale(){
         double tot=0;
 
         for (int i = 0; i < elementiOrdinati.size(); i++) {
           ElementiMenu  elemento=elementiOrdinati.get(i);
         tot += elemento.getPrice();
         }
-        tot+= numCoperti * costoCoperto;
+        tot+= numCoperti * table.getCopertoCosto();
+        System.out.println("Costo Coperto a persona: € " + table.getCopertoCosto());
+
 return tot;
 
+
     }
+
+
 
     public void printOrder() {
 
@@ -64,7 +69,7 @@ return tot;
                 elementiOrdinati.forEach(e->
                         System.out.println(e.getName() + " --- € " + e.getPrice()));
 
-//        System.out.println("Totale:  € " + calcolaTotale(costoCoperto));
+
 
     }
 }

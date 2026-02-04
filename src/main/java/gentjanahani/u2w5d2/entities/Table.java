@@ -13,4 +13,5 @@ public class Table {
     private int numTavolo;
     private int numeroCopertiMax;
     private StatoTavolo statoTavolo;
+    private double copertoCosto;
 }
